@@ -1,0 +1,98 @@
+
+
+<html>
+	<head>
+
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Case 1'
+        },
+        credits: {
+            enabled: false
+        },
+ 
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            
+            data: [
+                ['5',   10.0],
+                ['1',       90.0]
+            ]
+        }]
+    });
+});
+    
+$(function () {
+    $('#container2').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Case 2'
+        },
+        credits: {
+            enabled: false
+        },
+ 
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+           
+            data: [
+                ['-20',   70.0],
+                ['100',       30.0]
+            ]
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+
+		<%= javascript_include_tag "js/highcharts" %>
+
+
+<div id="container" style="float:left; width: 400px; height: 400px"></div>
+<div id="container2" style="float:left; width: 400px; height: 400px;"></div>
+<div style ="clear:both"></div>
+
+	</body>
+</html>
